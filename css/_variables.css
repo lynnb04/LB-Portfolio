@@ -1,0 +1,194 @@
+/* ============================================
+   PORTFOLIO STYLESHEET
+   ============================================ */
+
+:root {
+    /* mijn kleuren */
+    --brand-pink: #d68c93;
+    --brand-red: #8e3e43;
+    --brand-deep-red: #4d0000;
+
+    /* lichte modus */
+    --bg-color: #f3efe0;
+    --text-primary: #2b2b2b;
+    --text-secondary: #5c5c5c;
+
+    /* glassmorphism lichte modus */
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-hover: rgba(255, 255, 255, 0.7);
+    --glass-shadow: rgba(0, 0, 0, 0.05);
+
+    /* ui variabelen */
+    --border-radius: 20px;
+    --border-radius-sm: 12px;
+    --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --container-max: 1200px;
+}
+
+
+/* ============================================
+   THEMA TOGGLE (CSS-only dark mode)
+   ============================================ */
+
+/* visueel verborgen checkboxes voor toegankelijkheid */
+.thema-checkbox,
+.nav-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+#thema-checkbox:focus-visible~.pagina-wrapper #thema-toggle {
+    outline: 2px solid var(--brand-pink);
+    outline-offset: 2px;
+}
+
+/* donkere modus */
+#thema-checkbox:checked~.pagina-wrapper {
+    --bg-color: #1a1a1a;
+    --text-primary: #f4f4f4;
+    --text-secondary: #aaaaaa;
+
+    --glass-bg: rgba(43, 43, 43, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-hover: rgba(55, 55, 55, 0.8);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+
+    --brand-red: #a34e53;
+    --brand-pink: #e0a3a9;
+
+    .hoofd-nav a:hover,
+    .hoofd-nav a:focus {
+        background: var(--brand-pink);
+        color: var(--bg-color);
+        box-shadow: 0 4px 12px rgba(214, 140, 147, 0.3);
+    }
+}
+
+/* donkere modus koppen */
+#thema-checkbox:checked~.pagina-wrapper h1,
+#thema-checkbox:checked~.pagina-wrapper h2,
+#thema-checkbox:checked~.pagina-wrapper h3,
+#thema-checkbox:checked~.pagina-wrapper h4 {
+    color: var(--text-primary);
+}
+
+/* donkere modus gradient tekst */
+#thema-checkbox:checked~.pagina-wrapper .hoofd-header h1 a,
+#thema-checkbox:checked~.pagina-wrapper .accent {
+    background: linear-gradient(135deg, var(--brand-pink), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* maan/zon icoon toggle */
+#sun-icon {
+    display: none;
+}
+
+#thema-checkbox:checked~.pagina-wrapper #moon-icon {
+    display: none;
+}
+
+#thema-checkbox:checked~.pagina-wrapper #sun-icon {
+    display: block;
+}
+
+/* donkere modus badge kleuren */
+#thema-checkbox:checked~.pagina-wrapper .kaart-badge {
+    color: var(--brand-pink);
+    border-color: rgba(224, 163, 169, 0.3);
+    background: rgba(224, 163, 169, 0.1);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .kaart-tags span {
+    color: var(--brand-pink);
+    background: rgba(224, 163, 169, 0.1);
+    border-color: rgba(224, 163, 169, 0.2);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .lees-meer {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .hero-label {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .kaart-icoon {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .tijdlijn-periode {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .tijdlijn-punt {
+    background: var(--brand-pink);
+    box-shadow: 0 0 0 4px rgba(224, 163, 169, 0.2), 0 0 20px rgba(224, 163, 169, 0.3);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .tijdlijn-lijn {
+    background: linear-gradient(to bottom, var(--brand-pink), transparent);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .contact-kaart svg {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .contact-label {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .hero-stage-label {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .stage-blok {
+    background: rgba(224, 163, 169, 0.06);
+    border-color: rgba(224, 163, 169, 0.15);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .stage-blok:hover {
+    background: rgba(224, 163, 169, 0.1);
+    border-color: rgba(224, 163, 169, 0.3);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .footer-link {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .footer-link:hover {
+    color: var(--bg-color);
+    background: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .footer-naam {
+    background: linear-gradient(135deg, var(--brand-pink), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#thema-checkbox:checked~.pagina-wrapper .modal-badge {
+    color: var(--brand-pink);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .taal-optie {
+    color: var(--text-secondary);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .taal-optie.actief {
+    background: var(--brand-pink);
+    color: var(--bg-color);
+}
+
+#thema-checkbox:checked~.pagina-wrapper .hero-badge {
+    color: var(--brand-pink);
+}

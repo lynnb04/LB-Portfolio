@@ -1,0 +1,34 @@
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    transition: color 0.4s ease, background-color 0.4s ease;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.pagina-wrapper {
+    min-height: 100vh;
+    color: var(--text-primary);
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 2rem;
+}

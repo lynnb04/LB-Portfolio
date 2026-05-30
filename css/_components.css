@@ -1,0 +1,98 @@
+/* ============================================
+   MODALS (Popover API)
+   ============================================ */
+
+.project-modal {
+    margin: auto;
+    border: none;
+    background: transparent;
+    padding: 0;
+    max-width: 650px;
+    width: 90%;
+    color: var(--text-primary);
+    overflow: visible;
+}
+
+.project-modal:popover-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-inhoud {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    position: relative;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.modal-badge {
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.modal-inhoud h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.modal-inhoud p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.sluit-knop {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.sluit-knop:hover {
+    color: var(--brand-red);
+    transform: rotate(90deg);
+}
+
+.modal-knop {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--brand-red), var(--brand-pink));
+    color: white !important;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: var(--transition);
+    border: none;
+    box-shadow: 0 4px 15px rgba(214, 140, 147, 0.2);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(142, 62, 67, 0.3);
+    }
+}

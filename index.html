@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynn Bolderman - Portfolio</title>
+    <meta name="description"
+        content="Portfolio van Lynn Bolderman, 3e jaars CMD student aan de HvA. Frontend developer met passie voor toegankelijkheid, CSS animaties en creatieve interacties.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- thema toggle checkbox visueel verborgen -->
+    <input type="checkbox" id="thema-checkbox" class="thema-checkbox">
+    <!-- mobiel nav checkbox visueel verborgen -->
+    <input type="checkbox" id="nav-checkbox" class="nav-checkbox">
+
+    <!-- pagina wrapper voor css sibling selectors -->
+    <div class="pagina-wrapper">
+        <!-- animatie achtergrond blobs -->
+        <div class="body-achtergrond">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <!-- glassmorphic header -->
+        <header class="hoofd-header glas">
+            <div class="header-inhoud container">
+                <h1><a href="#">LB.</a></h1>
+                <nav class="hoofd-nav" id="hoofd-nav">
+                    <a href="#projecten">Projecten</a>
+                    <a href="#over-mij">Over Mij</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="header-rechts">
+                    <!-- taal toggle -->
+                    <div class="taal-toggle" id="taal-toggle" role="radiogroup" aria-label="Taalkeuze">
+                        <button class="taal-optie actief" data-lang="nl" aria-pressed="true">NL</button>
+                        <button class="taal-optie" data-lang="en" aria-pressed="false">EN</button>
+                    </div>
+                    <!-- thema toggle -->
+                    <label for="thema-checkbox" id="thema-toggle" aria-label="Donkere modus inschakelen" role="button"
+                        tabindex="0">
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </label>
+                    <!-- mobiel hamburger -->
+                    <label for="nav-checkbox" class="hamburger" aria-label="Menu openen" role="button" tabindex="0">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <!-- mobiel nav overlay -->
+        <div class="mobiel-nav-overlay">
+            <nav class="mobiel-nav">
+                <a href="#projecten" onclick="document.getElementById('nav-checkbox').checked=false">Projecten</a>
+                <a href="#over-mij" onclick="document.getElementById('nav-checkbox').checked=false">Over Mij</a>
+                <a href="#contact" onclick="document.getElementById('nav-checkbox').checked=false">Contact</a>
+            </nav>
+        </div>
+
+        <main>
+            <!-- ====== HERO / LANDING ====== -->
+            <section class="hero" id="hero">
+                <div class="hero-inhoud container anim-verberg">
+                    <p class="hero-label" data-nl="Frontend Design &
+                        Development" data-en="Frontend Design &
+                        Development">Frontend Design &
+                        Development</p>
+                    <h2>Lynn Bolderman</h2>
+                    <p class="hero-tekst" data-nl="Leuk dat je een kijkje neemt op mijn portfolio! Ik ben derdejaars student Communication &
+                        Multimedia Design aan de Hogeschool van Amsterdam en rond momenteel de minor Web Design &
+                        Development af. Ik haal veel energie uit het bouwen van toegankelijke,
+                        gebruiksvriendelijke en interactieve digitale ervaringen. Van slimme UX-oplossingen tot
+                        vloeiende animaties: ik vind het geweldig om ontwerpen tot leven te brengen in
+                        code."
+                        data-en="Welcome to my portfolio. I'm a third-year Communication & Multimedia Design student at the Amsterdam University of Applied Sciences, currently completing the Web Design & Development minor. I enjoy creating accessible, user-friendly, and interactive digital experiences. From thoughtful UX solutions to engaging animations, I love bringing designs to life through code.">
+                        Leuk dat je een kijkje neemt op mijn portfolio! Ik ben derdejaars student Communication &
+                        Multimedia Design aan de Hogeschool van Amsterdam en rond momenteel de minor Web Design &
+                        Development af. Ik haal veel energie uit het bouwen van toegankelijke,
+                        gebruiksvriendelijke en interactieve digitale ervaringen. Van slimme UX-oplossingen tot
+                        vloeiende animaties: ik vind het geweldig om ontwerpen tot leven te brengen in
+                        code.
+                    </p>
+                    <div class="hero-stage-info">
+                        <p class="hero-stage-label" data-nl="Beschikbaar voor stage" data-en="Available for internship">
+                            Beschikbaar voor stage</p>
+                        <div class="hero-stage-blokken">
+                            <div class="stage-blok glas-kaart">
+                                <span class="stage-type" data-nl="Korte stage" data-en="Short internship">Korte
+                                    stage</span>
+                                <span class="stage-detail" data-nl="10 weken · sept 2026"
+                                    data-en="10 weeks · Sept 2026">10 weken · sept 2026</span>
+                            </div>
+                            <div class="stage-blok glas-kaart">
+                                <span class="stage-type" data-nl="Lange stage" data-en="Long internship">Lange
+                                    stage</span>
+                                <span class="stage-detail" data-nl="20 weken · feb 2027"
+                                    data-en="20 weeks · Feb 2027">20 weken · feb 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="knop knop-primair stage-cta" data-nl="Neem contact op →"
+                        data-en="Get in touch →">Neem contact op →</a>
+                </div>
+            </section>
+
+            <!-- ====== PROJECTEN ====== -->
+            <section id="projecten" class="projecten-sectie container">
+                <div class="sectie-header anim-verberg">
+                    <h2 data-nl="Projecten" data-en="Projects">Projecten</h2>
+                    <p data-nl="Een selectie van mijn werk, van recente projecten tot eerdere opdrachten."
+                        data-en="A selection of my work, from recent projects to earlier assignments.">Een selectie van
+                        mijn werk, van recente projecten tot eerdere opdrachten.</p>
+                </div>
+
+                <!-- uitgelichte projecten -->
+                <div class="projecten-uitgelicht anim-verberg">
+                    <button class="project-kaart glas-kaart uitgelicht" popovertarget="modal-meesterproef">
+                        <div class="kaart-badge bezig" data-nl="Waar ik nu aan werk" data-en="Currently working on">Waar
+                            ik nu aan werk</div>
+                        <div class="kaart-inhoud">
+                            <h3>Meesterproef</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Het afsluitende project van de minor Web Design and Development. Hier komt alles samen."
+                                data-en="The final project of the Web Design and Development minor. Everything comes together here.">
+                                Het afsluitende project van de minor Web Design and Development. Hier komt alles samen.
+                            </p>
+                            <div class="kaart-tags">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                            </div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                    <button class="project-kaart glas-kaart uitgelicht" popovertarget="modal-css">
+                        <div class="kaart-badge trots" data-nl="Meest trots op" data-en="Most proud of">Meest
+                            trots op</div>
+                        <div class="kaart-inhoud">
+                            <h3>CSS to the Rescue</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Een digitale kaleidoscoop gebouwd met puur CSS, geen JavaScript. Experimenteren met het Cicada Principle en CSS Nesting voor creatieve animaties."
+                                data-en="A digital kaleidoscope built with pure CSS, no JavaScript. Experimenting with the Cicada Principle and CSS Nesting for creative animations.">
+                                Een digitale kaleidoscoop gebouwd met puur CSS, geen JavaScript. Experimenteren met het
+                                Cicada Principle en CSS Nesting voor creatieve animaties.</p>
+                            <div class="kaart-tags">
+                                <span>CSS</span><span>Animaties</span><span>Creatief</span>
+                            </div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- overige projecten raster -->
+                <div class="projecten-raster anim-verberg">
+                    <button class="project-kaart glas-kaart" popovertarget="modal-blog">
+                        <div class="kaart-inhoud">
+                            <h3>Meesterschapsblog</h3>
+                            <p class="kaart-beschrijving" data-nl="Mijn blog over het leerproces tijdens de minor."
+                                data-en="My blog about the learning process during the minor.">Mijn blog over het
+                                leerproces tijdens de minor.</p>
+                            <div class="kaart-tags"><span>Schrijven</span><span>Reflectie</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                    <button class="project-kaart glas-kaart" popovertarget="modal-hcd">
+                        <div class="kaart-inhoud">
+                            <h3>Human Centered Design</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Ontwerpen voor een specifieke gebruiker. Samengewerkt met Berend, die blind is, om een echt inclusieve interface voor hem te maken."
+                                data-en="Designing for a specific user. Collaborated with Berend, who is blind, to create a truly inclusive interface for him.">
+                                Ontwerpen voor een specifieke gebruiker. Samengewerkt met Berend, die blind is, om een
+                                echt inclusieve interface voor hem te maken.</p>
+                            <div class="kaart-tags"><span>A11y</span><span>User Testing</span><span>Exclusive
+                                    Design</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                    <button class="project-kaart glas-kaart" popovertarget="modal-hackathon">
+                        <div class="kaart-inhoud">
+                            <h3>Hackathon</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Prototype ontworpen en gebouwd in teamverband voor een ruimtevaart-thema in opdracht van Nebula Xplorer in een paar dagen tijd."
+                                data-en="Designed and built a space-themed prototype in a team for Nebula Xplorer in just a few days.">
+                                Prototype ontworpen en gebouwd in teamverband voor een ruimtevaart-thema in opdracht van
+                                Nebula Xplorer in een paar dagen tijd.
+                            </p>
+                            <div class="kaart-tags"><span>Design &
+                                    Code</span><span>Prototyping</span><span>Teamwerk</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                    <button class="project-kaart glas-kaart" popovertarget="modal-api">
+                        <div class="kaart-inhoud">
+                            <h3>API</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Een Karaoke App in Astro met data van Deezer en Lyrics.ovh. Picture-in-Picture API en View Transitions."
+                                data-en="A Karaoke App in Astro with data from Deezer and Lyrics.ovh. Picture-in-Picture API and View Transitions.">
+                                Een Karaoke App in Astro met data van Deezer en Lyrics.ovh. Picture-in-Picture API en
+                                View Transitions.</p>
+                            <div class="kaart-tags"><span>Astro</span><span>API</span><span>JavaScript</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                    <button class="project-kaart glas-kaart" popovertarget="modal-bt">
+                        <div class="kaart-inhoud">
+                            <h3>Browser Technology</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Een robuust belastingformulier met Progressive Enhancement. Werkt altijd, ook zonder JavaScript."
+                                data-en="A robust tax form with Progressive Enhancement. Always works, even without JavaScript.">
+                                Een robuust belastingformulier met Progressive Enhancement. Werkt altijd, ook zonder
+                                JavaScript.</p>
+                            <div class="kaart-tags"><span>HTML</span><span>CSS</span><span>Progressive
+                                    Enhancement</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                    <button class="project-kaart glas-kaart" popovertarget="modal-sprint0">
+                        <div class="kaart-inhoud">
+                            <h3>Sprint 0</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="De start van de minor: experimenteren met interacties en data ophalen via de FDND Directus API."
+                                data-en="The start of the minor: experimenting with interactions and fetching data via the FDND Directus API.">
+                                De start van de minor: experimenteren met interacties en data ophalen via de FDND
+                                Directus API.</p>
+                            <div class="kaart-tags"><span>API</span><span>Experimenten</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+
+                    <button class="project-kaart glas-kaart" popovertarget="modal-projecttech">
+                        <div class="kaart-inhoud">
+                            <h3>Project Tech</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Technisch project waar ik de basis heb gelegd voor mijn development skills."
+                                data-en="Technical project where I laid the foundation for my development skills.">
+                                Technisch project waar ik de basis heb gelegd voor mijn development skills.</p>
+                            <div class="kaart-tags"><span>JavaScript</span><span>Node.js</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                    <button class="project-kaart glas-kaart" popovertarget="modal-fed">
+                        <div class="kaart-inhoud">
+                            <h3>Frontend Development</h3>
+                            <p class="kaart-beschrijving"
+                                data-nl="Mijn eerste stappen in frontend development. De fundering voor alles wat daarna kwam."
+                                data-en="My first steps in frontend development. The foundation for everything that followed.">
+                                Mijn eerste stappen in frontend development. De fundering voor alles wat daarna kwam.
+                            </p>
+                            <div class="kaart-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <span class="lees-meer" data-nl="Bekijk details →" data-en="View details →">Bekijk details
+                                →</span>
+                        </div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ====== OVER MIJ ====== -->
+            <section id="over-mij" class="over-mij-sectie container">
+                <div class="sectie-header anim-verberg">
+                    <h2 data-nl="Over Mij" data-en="About Me">Over Mij</h2>
+                </div>
+
+                <div class="over-mij-inhoud anim-verberg">
+                    <div class="over-mij-foto">
+                        <div class="foto-container">
+                            <img src="images/ik2.jpeg" alt="Lynn Bolderman" class="profiel-foto">
+                        </div>
+                    </div>
+                    <div class="over-mij-tekst">
+                        <p data-nl="Mijn naam is Lynn Bolderman. Ik woon in Hoofddorp en studeer Communication and Multimedia Design aan de HvA, waar ik nu in het 3e jaar zit. Momenteel ben ik bezig met het afronden van de minor Web Design and Development. Ik heb het hier onwijs naar mijn zin en ben er echt achter gekomen dat frontend development de kant binnen CMD is waar ik me in wil verdiepen en ontwikkelen."
+                            data-en="My name is Lynn Bolderman. I live in Hoofddorp and study Communication and Multimedia Design at the HvA, where I am currently in my 3rd year. I am currently finishing the Web Design and Development minor. I am really enjoying my time here and have truly discovered that frontend development is the direction within CMD that I want to explore and develop myself in.">
+                            Mijn naam is Lynn Bolderman. Ik woon in Hoofddorp en studeer Communication and Multimedia
+                            Design aan de HvA, waar ik nu in het 3e jaar zit. Momenteel ben ik bezig met het afronden
+                            van de minor Web Design and Development. Ik heb het hier onwijs naar mijn zin en ben er echt
+                            achter gekomen dat frontend development de kant binnen CMD is waar ik me in wil verdiepen en
+                            ontwikkelen.
+                        </p>
+                        <p data-nl="Wat mij aanspreekt aan frontend development is de combinatie van techniek, creativiteit en gebruikerservaring. Ik vind toegankelijkheid daarbij ontzettend belangrijk. Het web is er voor iedereen en ik geloof dat iedereen digitale producten moet kunnen gebruiken, ongeacht ervaring, mogelijkheden of beperkingen. Daarom probeer ik toegankelijkheid altijd mee te nemen in mijn ontwerp- en ontwikkelproces."
+                            data-en="What appeals to me about frontend development is the combination of technology, creativity, and user experience. I find accessibility incredibly important in this regard. The web is for everyone, and I believe everyone should be able to use digital products, regardless of their experience, abilities, or limitations. That is why I always try to incorporate accessibility into my design and development process.">
+                            Wat mij aanspreekt aan frontend development is de combinatie van techniek, creativiteit en
+                            gebruikerservaring. Ik vind toegankelijkheid daarbij ontzettend belangrijk. Het web is er
+                            voor iedereen en ik geloof dat iedereen digitale producten moet kunnen gebruiken, ongeacht
+                            ervaring, mogelijkheden of beperkingen. Daarom probeer ik toegankelijkheid altijd mee te
+                            nemen in mijn ontwerp- en ontwikkelproces.
+                        </p>
+                        <p data-nl="Daarnaast word ik enthousiast van interactieve interfaces en goed uitgewerkte animaties. Met CSS en GSAP experimenteer ik graag om websites meer karakter en gebruiksgemak te geven. Ik vind het leuk om te onderzoeken hoe beweging kan bijdragen aan de ervaring van een gebruiker zonder af te leiden van de inhoud."
+                            data-en="In addition, I get excited about interactive interfaces and well-crafted animations. I love experimenting with CSS and GSAP to give websites more character and usability. I enjoy exploring how motion can contribute to a user's experience without distracting from the content.">
+                            Daarnaast word ik enthousiast van interactieve interfaces en goed uitgewerkte animaties. Met
+                            CSS en GSAP experimenteer ik graag om websites meer karakter en gebruiksgemak te geven. Ik
+                            vind het leuk om te onderzoeken hoe beweging kan bijdragen aan de ervaring van een gebruiker
+                            zonder af te leiden van de inhoud.
+                        </p>
+                        <p data-nl="De komende jaren wil ik mezelf verder ontwikkelen als frontend developer. Ik wil mijn kennis van JavaScript verdiepen, meer ervaring opdoen met moderne frameworks en blijven leren hoe ik toegankelijke en schaalbare websites kan bouwen. Tegelijkertijd wil ik mijn achtergrond in UX en design blijven inzetten om techniek en gebruiksvriendelijkheid met elkaar te verbinden."
+                            data-en="In the coming years, I want to further develop myself as a frontend developer. I want to deepen my knowledge of JavaScript, gain more experience with modern frameworks, and continue learning how to build accessible and scalable websites. At the same time, I want to keep using my background in UX and design to connect technology and user-friendliness.">
+                            De komende jaren wil ik mezelf verder ontwikkelen als frontend developer. Ik wil mijn kennis
+                            van JavaScript verdiepen, meer ervaring opdoen met moderne frameworks en blijven leren hoe
+                            ik toegankelijke en schaalbare websites kan bouwen. Tegelijkertijd wil ik mijn achtergrond
+                            in UX en design blijven inzetten om techniek en gebruiksvriendelijkheid met elkaar te
+                            verbinden.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ervaring tijdlijn -->
+                <div class="sectie-header tijdlijn-header anim-verberg">
+                    <h3 data-nl="Mijn Pad" data-en="My Path">Mijn Pad</h3>
+                </div>
+                <div class="tijdlijn anim-verberg">
+                    <div class="tijdlijn-lijn"></div>
+
+                    <div class="tijdlijn-item">
+                        <div class="tijdlijn-punt"></div>
+                        <div class="tijdlijn-kaart glas-kaart">
+                            <span class="tijdlijn-periode">Middelbare School</span>
+                            <h4 data-nl="Waar het begon" data-en="Where it started">Waar het begon</h4>
+                            <p data-nl="Al van jongs af aan had ik een fascinatie voor apps, websites en digitale producten. Ik was altijd nieuwsgierig naar hoe dingen werkten en vond het interessant hoe technologie het dagelijks leven kon verbeteren. Hoewel ik al vroeg interesse had in programmeren, leek code mij lange tijd iets ingewikkelds waar ik niet aan durfte te beginnen. Toch bleef die interesse altijd aanwezig."
+                                data-en="Ever since I was young, I've been fascinated by apps, websites, and digital products. I was always curious about how things worked and found it interesting how technology could improve daily life. Although I had an early interest in programming, code seemed to me for a long time like something complicated that I didn't dare to start with. Still, that interest always remained.">
+                                Al van jongs af aan had ik een fascinatie voor apps, websites en digitale producten. Ik
+                                was altijd nieuwsgierig naar hoe dingen werkten en vond het interessant hoe technologie
+                                het dagelijks leven kon verbeteren. Hoewel ik al vroeg interesse had in programmeren,
+                                leek code mij lange tijd iets ingewikkelds waar ik niet aan durfte te beginnen. Toch
+                                bleef die interesse altijd aanwezig.</p>
+                        </div>
+                    </div>
+
+                    <div class="tijdlijn-item">
+                        <div class="tijdlijn-punt"></div>
+                        <div class="tijdlijn-kaart glas-kaart">
+                            <span class="tijdlijn-periode">CMD Utrecht - HU</span>
+                            <h4 data-nl="Propedeuse gehaald" data-en="Foundation year completed">Propedeuse gehaald</h4>
+                            <p data-nl="Tijdens mijn eerste studiejaar bij CMD in Utrecht heb ik vooral onderzocht welke richting binnen het vakgebied het beste bij mij paste. Hier heb ik een sterke basis gelegd in design thinking, UX-design, UX-onderzoek en digitale vormgeving. Ook heb ik gewerkt met tools zoals Figma, Photoshop en WordPress en ervaring opgedaan met het doen van doelgroeponderzoek en gebruikerstesten en projecten maken voor echte opdrachtgevers."
+                                data-en="During my first year studying CMD in Utrecht, I mainly explored which direction within the field suited me best. I built a strong foundation in design thinking, UX design, UX research, and digital design. I also worked with tools like Figma, Photoshop, and WordPress, and gained experience in target audience research, user testing, and creating projects for real clients.">
+                                Tijdens mijn eerste studiejaar bij CMD in Utrecht heb ik vooral onderzocht welke
+                                richting binnen het vakgebied het beste bij mij paste. Hier heb ik een sterke basis
+                                gelegd in design thinking, UX-design, UX-onderzoek en digitale vormgeving. Ook heb ik
+                                gewerkt met tools zoals Figma, Photoshop en WordPress en ervaring opgedaan met het doen
+                                van doelgroeponderzoek en gebruikerstesten en projecten maken voor echte opdrachtgevers.
+                            </p>
+                            <p data-nl="In deze periode ontdekte ik dat ik veel plezier haalde uit het ontwerpen van digitale producten en het begrijpen van gebruikers. Daardoor wist ik dat ik me verder wilde ontwikkelen binnen UX en UI. Ik ben gaan kijken naar andere scholen en zag dat de HvA hier veel aandacht aan besteedt in hun curriculum. Daarnaast zou ik ook les gaan krijgen over frontend development, wat voor mij een perfecte kans bood om toch wat te gaan doen met de wens die ik al van jongs af aan had. Om die reden besloot ik de overstap te maken naar CMD aan de Hogeschool van Amsterdam."
+                                data-en="During this period, I discovered that I really enjoyed designing digital products and understanding users. As a result, I knew I wanted to further develop myself in UX and UI. I started looking at other schools and saw that the HvA puts a lot of focus on this in their curriculum. In addition, I would also be taught frontend development, which offered me a perfect opportunity to finally pursue the desire I'd had since childhood. For that reason, I decided to transfer to CMD at the Amsterdam University of Applied Sciences.">
+                                In deze periode ontdekte ik dat ik veel plezier haalde uit het ontwerpen van digitale
+                                producten en het begrijpen van gebruikers. Daardoor wist ik dat ik me verder wilde
+                                ontwikkelen binnen UX en UI. Ik ben gaan kijken naar andere scholen en zag dat de HvA
+                                hier veel aandacht aan besteedt in hun curriculum. Daarnaast zou ik ook les gaan krijgen
+                                over frontend development, wat voor mij een perfecte kans bood om toch wat te gaan doen
+                                met de wens die ik al van jongs af aan had. Om die reden besloot ik de overstap te maken
+                                naar CMD aan de Hogeschool van Amsterdam.</p>
+                            <div class="kaart-tags">
+                                <span>Figma</span><span>Design Thinking</span><span>Adobe
+                                    CC</span><span>UX/UI</span><span>WordPress</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tijdlijn-item">
+                        <div class="tijdlijn-punt actief-punt"></div>
+                        <div class="tijdlijn-kaart glas-kaart actief-kaart">
+                            <span class="tijdlijn-periode">CMD Amsterdam - HvA</span>
+                            <h4 data-nl="Ingestroomd in jaar 2 - Nu" data-en="Entered year 2 - Present">Ingestroomd in
+                                jaar 2 - Nu</h4>
+                            <p data-nl="Bij CMD Amsterdam heb ik mijn kennis verder verbreed en verdiept. Ik werkte aan projecten op het gebied van UX/UI-design, service design en frontend development. Zo heb ik onder andere gewerkt aan een service design-project voor het Wereldmuseum Amsterdam."
+                                data-en="At CMD Amsterdam, I further broadened and deepened my knowledge. I worked on projects in UX/UI design, service design, and frontend development. For instance, I worked on a service design project for the Wereldmuseum Amsterdam.">
+                                Bij CMD Amsterdam heb ik mijn kennis verder verbreed en verdiept. Ik werkte aan
+                                projecten op het gebied van UX/UI-design, service design en frontend development. Zo heb
+                                ik onder andere gewerkt aan een service design-project voor het Wereldmuseum Amsterdam.
+                            </p>
+                            <p data-nl="Tijdens deze periode werd bevestigd dat frontend development het onderdeel van CMD is waar ik de meeste energie van krijg. Hier heb ik uiteindelijk de keuze gemaakt om me actief te richten op code en heb ik het vertrouwen gevonden om mezelf verder te ontwikkelen als developer. Binnen de minor Web Design & Development werk ik dagelijks met HTML, CSS en JavaScript en leer ik hoe ik ontwerpen kan vertalen naar toegankelijke en interactieve websites."
+                                data-en="During this period, it was confirmed that frontend development is the part of CMD that gives me the most energy. This is where I ultimately made the choice to actively focus on code and found the confidence to further develop myself as a developer. Within the Web Design & Development minor, I work daily with HTML, CSS, and JavaScript, learning how to translate designs into accessible and interactive websites.">
+                                Tijdens deze periode werd bevestigd dat frontend development het onderdeel van CMD is
+                                waar ik de meeste energie van krijg. Hier heb ik uiteindelijk de keuze gemaakt om me
+                                actief te richten op code en heb ik het vertrouwen gevonden om mezelf verder te
+                                ontwikkelen als developer. Binnen de minor Web Design & Development werk ik dagelijks
+                                met HTML, CSS en JavaScript en leer ik hoe ik ontwerpen kan vertalen naar toegankelijke
+                                en interactieve websites.</p>
+                            <div class="kaart-tags">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Astro</span><span>GSAP</span><span>Figma</span><span>GitHub</span><span>Blender</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ====== CONTACT ====== -->
+            <section id="contact" class="contact-sectie container">
+                <div class="sectie-header anim-verberg">
+                    <h2 data-nl="Contact" data-en="Contact">Contact</h2>
+                    <p data-nl="Wil je samenwerken of meer weten? Neem gerust contact op!"
+                        data-en="Want to collaborate or learn more? Feel free to reach out!">Wil je samenwerken of meer
+                        weten? Neem gerust contact op!</p>
+                </div>
+                <div class="contact-raster anim-verberg">
+                    <a href="mailto:l.bolderman@outlook.com" class="contact-kaart glas-kaart" id="contact-email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-waarde" data-nl="Stuur een mail" data-en="Send an email">Stuur een
+                            mail</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lynnbolderman/" target="_blank" rel="noopener noreferrer"
+                        class="contact-kaart glas-kaart" id="contact-linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-waarde" data-nl="Verbind met mij" data-en="Connect with me">Verbind met
+                            mij</span>
+                    </a>
+                    <a href="https://github.com/lynnb04" target="_blank" rel="noopener noreferrer"
+                        class="contact-kaart glas-kaart" id="contact-github">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                            </path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-waarde">@lynnb04</span>
+                    </a>
+                    <a href="https://codepen.io/lynnb04" target="_blank" rel="noopener noreferrer"
+                        class="contact-kaart glas-kaart" id="contact-codepen">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                            <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                            <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                            <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                            <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                        </svg>
+                        <span class="contact-label">CodePen</span>
+                        <span class="contact-waarde" data-nl="Bekijk mijn pens" data-en="View my pens">Bekijk mijn
+                            pens</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- ====== PROJECT MODALS (Popover API) ====== -->
+        <div id="modal-meesterproef" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-meesterproef" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Meesterproef</h3>
+                <p data-nl="Voor de Meesterproef werk ik aan een project voor een echte opdrachtgever: Marjolijn Ruijg. De opdracht is om een website te ontwikkelen waarin de begrippen van haar glossary theoretisch framework te zien zijn. De betekenis van elke term wordt uitgedrukt door middel van interactieve typografische animaties van het woord zelf."
+                    data-en="For the Masterpiece, I am working on a project for a real client: Marjolijn Ruijg. The assignment is to develop a website showcasing the concepts of her glossary theoretical framework. The meaning of each term is expressed through interactive typographic animations of the word itself.">
+                    Voor de Meesterproef werk ik aan een project voor een echte opdrachtgever: Marjolijn Ruijg. De
+                    opdracht is om een website te ontwikkelen waarin de begrippen van haar glossary theoretisch
+                    framework te zien zijn. De betekenis van elke term wordt uitgedrukt door middel van interactieve
+                    typografische animaties van het woord zelf.</p>
+                <p data-nl="Het ontwerp is volledig in zwart-wit met het lettertype Inter. De uitdaging is om met uitsluitend typografie en grafische elementen een interactieve animatie te ontwerpen waarbij de beweging en interactie essentieel zijn om de term echt te begrijpen."
+                    data-en="The design is entirely in black and white using the Inter typeface. The challenge is to design an interactive animation using only typography and graphic elements, where the movement and interaction are essential to truly understanding the term.">
+                    Het ontwerp is volledig in zwart-wit met het lettertype Inter. De uitdaging is om met uitsluitend
+                    typografie en grafische elementen een interactieve animatie te ontwerpen waarbij de beweging en
+                    interactie essentieel zijn om de term echt te begrijpen.</p>
+                <a href="https://github.com/ginchanah/Meesterproef" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-css" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-css" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>CSS to the Rescue</h3>
+                <p data-nl="Met 'CMD Artifaction' heb ik de grenzen van CSS opgezocht. Ik heb een digitale kaleidoscoop gebouwd zonder JavaScript. Met technieken zoals het Cicada Principle voor variatie in animaties en CSS Nesting om mijn code netjes te houden. Het was een goede les in creatief denken binnen de beperkingen van de browser."
+                    data-en="With 'CMD Artifaction' I pushed the boundaries of CSS. I built a digital kaleidoscope without JavaScript. Using techniques like the Cicada Principle for animation variation and CSS Nesting to keep my code clean. It was a great lesson in creative thinking within browser constraints.">
+                    Met 'CMD Artifaction' heb ik de grenzen van CSS opgezocht. Ik heb een digitale kaleidoscoop gebouwd
+                    zonder JavaScript. Met technieken zoals het Cicada Principle voor variatie in animaties en CSS
+                    Nesting om mijn code netjes te houden. Het was een goede les in creatief denken binnen de
+                    beperkingen van de browser.</p>
+                <a href="https://github.com/lynnb04/CSS-to-the-Rescue" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-blog" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-blog" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Meesterschapsblog</h3>
+                <p data-nl="Tijdens de minor Web Design and Development heb ik wekelijks een technische blog bijgehouden. Hierin reflecteer ik op mijn leerproces, leg ik complexe concepten uit en deel ik mijn code-experimenten."
+                    data-en="During the Web Design and Development minor, I maintained a weekly technical blog. In it, I reflect on my learning process, explain complex concepts, and share my code experiments.">
+                    Tijdens de minor Web Design and Development heb ik wekelijks een technische blog bijgehouden. Hierin
+                    reflecteer ik op mijn leerproces, leg ik complexe concepten uit en deel ik mijn code-experimenten.
+                </p>
+                <p data-nl="Het schrijven van deze artikelen heeft me niet alleen geholpen om mijn eigen kennis te verdiepen, maar ook om duidelijker te communiceren over techniek en beslissingen in code te verantwoorden."
+                    data-en="Writing these articles not only helped me deepen my own knowledge, but also to communicate more clearly about technology and justify decisions in code.">
+                    Het schrijven van deze artikelen heeft me niet alleen geholpen om mijn eigen kennis te verdiepen,
+                    maar ook om duidelijker te communiceren over techniek en beslissingen in code te verantwoorden.</p>
+                <a href="https://github.com/lynnb04/WDD-Blog" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-hcd" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-hcd" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Human Centered Design</h3>
+                <p data-nl="Bij HCD stond de gebruiker echt centraal. Ik heb nauw samengewerkt met Berend, die blind is, en dat heeft mijn blik op toegankelijkheid compleet veranderd. Ik heb de principes van Exclusive Design toegepast om een interface te maken die echt voor hem werkt. De focus lag op auditieve feedback en een interface die geoptimaliseerd is voor extreme zoomniveaus."
+                    data-en="In HCD the user was truly central. I worked closely with Berend, who is blind, and that completely changed my perspective on accessibility. I applied the principles of Exclusive Design to create an interface that truly works for him. The focus was on auditory feedback and an interface optimized for extreme zoom levels.">
+                    Bij HCD stond de gebruiker echt centraal. Ik heb nauw samengewerkt met Berend, die blind is, en dat
+                    heeft mijn blik op toegankelijkheid compleet veranderd. Ik heb de principes van Exclusive Design
+                    toegepast om een interface te maken die echt voor hem werkt. De focus lag op auditieve feedback en
+                    een interface die geoptimaliseerd is voor extreme zoomniveaus.</p>
+                <a href="https://github.com/lynnb04/Human-Centered-Design" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-api" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-api" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>API</h3>
+                <p data-nl="Voor het vak API heb ik een Karaoke App gebouwd in Astro. Ik heb data gecombineerd van Deezer en Lyrics.ovh. Een grote uitdaging was het omzeilen van CORS-blokkades, wat ik heb opgelost met een API Proxy. Ook heb ik de View Transitions API en Picture-in-Picture API gebruikt."
+                    data-en="For the API course I built a Karaoke App in Astro. I combined data from Deezer and Lyrics.ovh. A major challenge was bypassing CORS blocks, which I solved with an API Proxy. I also used the View Transitions API and Picture-in-Picture API.">
+                    Voor het vak API heb ik een Karaoke App gebouwd in Astro. Ik heb data gecombineerd van Deezer en
+                    Lyrics.ovh. Een grote uitdaging was het omzeilen van CORS-blokkades, wat ik heb opgelost met een API
+                    Proxy. Ook heb ik de View Transitions API en Picture-in-Picture API gebruikt.</p>
+                <a href="https://github.com/lynnb04/WDD-API" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-bt" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-bt" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Browser Technology</h3>
+                <p data-nl="Voor Browser Technology heb ik een belastingformulier gebouwd met Progressive Enhancement en Progressive Disclosure als basis. Hierdoor werkt het formulier altijd, ook als de browser oud is of het internet traag. Ik heb geleerd hoe je met slimme CSS (zoals :has()) een goede ervaring neerzet zonder JavaScript."
+                    data-en="For Browser Technology I built a tax form with Progressive Enhancement and Progressive Disclosure as the foundation. This ensures the form always works, even on old browsers or slow internet. I learned how smart CSS (like :has()) can create a good experience without JavaScript.">
+                    Voor Browser Technology heb ik een belastingformulier gebouwd met Progressive Enhancement en
+                    Progressive Disclosure als basis. Hierdoor werkt het formulier altijd, ook als de browser oud is of
+                    het internet traag. Ik heb geleerd hoe je met slimme CSS (zoals :has()) een goede ervaring neerzet
+                    zonder JavaScript.</p>
+                <a href="https://github.com/lynnb04/Browser-Technology" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-sprint0" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-sprint0" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Sprint 0</h3>
+                <p data-nl="Bij de start van de minor ben ik gaan ontdekken wat voor soort developer ik wil zijn. Met mijn 'Prikbord'-project heb ik geëxperimenteerd met verschillende interacties en voor het eerst data opgehaald via de FDND Directus API. Dit project hielp me om losser te worden in mijn proces."
+                    data-en="At the start of the minor I explored what kind of developer I want to be. With my 'Prikbord' project I experimented with different interactions and fetched data via the FDND Directus API for the first time. This project helped me loosen up in my process.">
+                    Bij de start van de minor ben ik gaan ontdekken wat voor soort developer ik wil zijn. Met mijn
+                    'Prikbord'-project heb ik geëxperimenteerd met verschillende interacties en voor het eerst data
+                    opgehaald via de FDND Directus API. Dit project hielp me om losser te worden in mijn proces.</p>
+                <a href="https://github.com/lynnb04/WDDSprint0" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-hackathon" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-hackathon" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Hackathon</h3>
+
+                <p data-nl="Tijdens de hackathon heb ik met een team in korte tijd een prototype gebouwd voor een ruimtevaart-thema in opdracht van Nebula Xplorer. We moesten in een paar dagen tijd snel schakelen over de techniek en het ontwerp."
+                    data-en="During the hackathon, I worked with a team to quickly build a space-themed prototype commissioned by Nebula Xplorer. We had to switch rapidly between technology and design in just a few days.">
+                    Tijdens de hackathon heb ik met een team in korte tijd een prototype gebouwd voor een
+                    ruimtevaart-thema in opdracht van Nebula Xplorer. We moesten in een paar dagen tijd snel schakelen
+                    over de techniek en het ontwerp.</p>
+                <p data-nl="Mijn grootste bijdrage was het coderen van de header en zowel het ontwerp als de code voor de 'steps before launch' sectie. Daarnaast heb ik het ontwerp gemaakt voor de 'about' sectie (met de black hole spiral) en de footer, waarbij mijn teamgenoten de code voor die onderdelen hebben opgepakt. Het was een toffe les in hoe je design en code verdeelt binnen een team."
+                    data-en="My biggest contribution was coding the header and both designing and coding the 'steps before launch' section. I also created the design for the 'about' section (featuring the black hole spiral) and the footer, while my teammates handled the code for those parts. It was a great lesson in how to divide design and code within a team.">
+                    Mijn grootste bijdrage was het coderen van de header en zowel het ontwerp als de code voor de 'steps
+                    before launch' sectie. Daarnaast heb ik het ontwerp gemaakt voor de 'about' sectie (met de black
+                    hole spiral) en de footer, waarbij mijn teamgenoten de code voor die onderdelen hebben opgepakt. Het
+                    was een toffe les in hoe je design en code verdeelt binnen een team.</p>
+                <a href="https://github.com/DiegoR03/Hackton_2026_Team_2" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-projecttech" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-projecttech" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Project Tech</h3>
+                <p data-nl="Project Tech was het moment waarop backend en frontend voor mij echt voor het eerst samenkwamen. Ik heb hier de basis gelegd voor server-side rendering en het ophalen en verwerken van data met Node.js."
+                    data-en="Project Tech was the moment backend and frontend really came together for me for the first time. Here I laid the foundation for server-side rendering and fetching and processing data with Node.js.">
+                    Project Tech was het moment waarop backend en frontend voor mij echt voor het eerst samenkwamen. Ik
+                    heb hier de basis gelegd voor server-side rendering en het ophalen en verwerken van data met
+                    Node.js.</p>
+                <p data-nl="Het was enorm leerzaam om te ontdekken hoe je data structureert en op een veilige manier naar de client stuurt, wat een essentiële stap was voor mijn ontwikkeling als developer."
+                    data-en="It was incredibly educational to discover how to structure data and send it securely to the client, which was an essential step for my development as a developer.">
+                    Het was enorm leerzaam om te ontdekken hoe je data structureert en op een veilige manier naar de
+                    client stuurt, wat een essentiële stap was voor mijn ontwikkeling als developer.</p>
+                <a href="https://github.com/ThomasPlas/projTech" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <div id="modal-fed" popover class="project-modal glas-modal">
+            <div class="modal-inhoud">
+                <button class="sluit-knop" popovertarget="modal-fed" popovertargetaction="hide"
+                    aria-label="Sluit modal">&times;</button>
+                <h3>Frontend Development</h3>
+                <p data-nl="Tijdens dit vak ben ik volledig de diepte in gedoken met de kerntalen van het web. Geen grote frameworks, maar gewoon solide HTML, CSS en JavaScript. Dit heeft een onmisbare fundering gelegd."
+                    data-en="During this course, I dove completely into the core languages of the web. No big frameworks, just solid HTML, CSS, and JavaScript. This laid an indispensable foundation.">
+                    Tijdens dit vak ben ik volledig de diepte in gedoken met de kerntalen van het web. Geen grote
+                    frameworks, maar gewoon solide HTML, CSS en JavaScript. Dit heeft een onmisbare fundering gelegd.
+                </p>
+                <p data-nl="Ik heb onder andere geleerd hoe belangrijk semantische HTML is voor toegankelijkheid, hoe je een robuuste CSS-architectuur opzet en hoe je JavaScript goed inzet om interacties tot leven te brengen."
+                    data-en="Among other things, I learned how important semantic HTML is for accessibility, how to set up a robust CSS architecture, and how to effectively use JavaScript to bring interactions to life.">
+                    Ik heb onder andere geleerd hoe belangrijk semantische HTML is voor toegankelijkheid, hoe je een
+                    robuuste CSS-architectuur opzet en hoe je JavaScript goed inzet om interacties tot leven te brengen.
+                </p>
+                <a href="https://github.com/lynnb04/FED2025" target="_blank" rel="noopener noreferrer"
+                    class="knop knop-secundair modal-knop">Bekijk op GitHub</a>
+            </div>
+        </div>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="glas">
+            <div class="footer-inhoud container">
+                <p>
+                    <span class="footer-naam">Lynn Bolderman</span>
+                    <span>&bull;</span>
+                    <span>2025</span>
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/lynnb04" target="_blank" rel="noopener noreferrer"
+                        class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/lynnbolderman/" target="_blank" rel="noopener noreferrer"
+                        class="footer-link">LinkedIn</a>
+                    <a href="https://codepen.io/lynnb04" target="_blank" rel="noopener noreferrer"
+                        class="footer-link">CodePen</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="javascript/index.js"></script>
+</body>
+
+</html>

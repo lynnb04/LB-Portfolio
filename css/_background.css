@@ -1,0 +1,71 @@
+/* ============================================
+   GEANIMEERDE ACHTERGROND (OMBRE BLOBS)
+   ============================================ */
+
+.body-achtergrond {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+}
+
+.blob {
+    position: absolute;
+    filter: blur(100px);
+    border-radius: 50%;
+    opacity: 0.4;
+    transition: var(--transition);
+    animation: blob-float 20s ease-in-out infinite;
+}
+
+@keyframes blob-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -20px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-20px, 15px) scale(0.95);
+    }
+}
+
+#thema-checkbox:checked~.pagina-wrapper .blob {
+    opacity: 0.35;
+}
+
+.blob-1 {
+    width: 45vw;
+    height: 45vw;
+    background: var(--brand-pink);
+    top: -15vw;
+    left: -10vw;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 40vw;
+    height: 40vw;
+    background: var(--brand-red);
+    right: -10vw;
+    bottom: -15vw;
+    animation-delay: -7s;
+}
+
+.blob-3 {
+    width: 35vw;
+    height: 35vw;
+    background: var(--brand-deep-red);
+    bottom: 20%;
+    left: -10%;
+    animation-delay: -14s;
+}
